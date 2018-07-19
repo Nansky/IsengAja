@@ -1,3 +1,7 @@
+##############################################################################
+# Predict Survivor from Titanic Accident using Logistic Regression Algorithm #
+##############################################################################
+
 library(dplyr)
 library(Amelia)
 library(ggplot2)
@@ -60,7 +64,6 @@ gender_sub <- read.csv('gender_submission.csv')
 
 # Count MissclassError
 missclassEr <- mean(gender_sub$Survived != fitted.res)
-print(missclassEr) # MissClassEr = 0.05502392
 
 # Generate Submission data 
 submission_data <- as.data.frame(fitted.res,predicted)
